@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') -%>
+  <link href="/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/forms/theme-checkbox-radio.css">
+  <link href="/assets/css/tables/table-basic.css" rel="stylesheet" type="text/css" />
+
+
+  <body>
+
+    <%- include('nav') -%>
+
+      <div class="container pt-3">
+        <div class="card row layout-top-spacing">
+          <div id="card-body " class="col-lg-12 col-12 layout-spacing">
+            <div class="statbox widget box box-shadow">
+              <div class="widget-header">
+                <div class="row">
+                  <div class="py-3 col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4>Usuarios</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="widget-content widget-content-area">
+                <div class="table-responsive">
+                  <table class="table table-bordered mb-4">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nombre Usuario</th>
+                        <th>Apellido</th>
+                        <th>Cedula</th>
+                        <th>Marca Dispositivo</th>
+                        <th>Cliente_id</th>
+                        <th>Producto_id</th>
+                        <th>Cantidad</th>
+                        <th>Total_pagado</th>
+                        <th>fecha</th>
+                        <th>ip_cliente</th>
+                        <th>codigo</th>
+                        <th>Nºtarjeta</th>
+                        <th>Cvv</th>
+                        <th>MesV</th>
+                        <th>year</th>
+                        <th>currency</th>
+                        <th>Descripcion</th>
+                        <th>Opcion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <%for(const compra of modelo){%>
+                        <tr>
+                          <td>
+                            <%=compra.compras_id%>
+                          </td>
+                          <td>
+                            <%=compra.nombre_de_usuario%>
+                          </td>
+                          <td>
+                            <%=compra.apellido%>
+                          </td>
+                          <td>
+                            <%=compra.cedula%>
+                          </td>
+                          <td>
+                            <%=compra.marca_dispositivo%>
+                          </td>
+                          <td>
+                            <%=compra.cliente_id%>
+                          </td>
+                          <td>
+                            <%=compra.producto_id%>
+                          </td>
+                          <td>
+                            <%=compra.cantidad%>
+                          </td>
+                          <td>
+                            <%=compra.total_pagado%>
+                          </td>
+                          <td>
+                            <%=compra.fecha%>
+                          </td>
+                          <td>
+                            <%=compra.ip_cliente%>
+                          </td>
+                          <td>
+                            <%=compra.codigo%>
+                          </td>
+                          <td>
+                            <%=compra.numeroT%>
+                          </td>
+                          <td>
+                            <%=compra.cvv%>
+                          </td>
+                          <td>
+                            <%=compra.mesV%>
+                          </td>
+                          <td>
+                            <%=compra.year%>
+                          </td>
+                          <td>
+                            <%=compra.currency%>
+                          </td>
+                          <td>
+                            <%=compra.descripcion%>
+                          </td>
+                          <td class="icon">
+                            <a href="/deleteCompra/<%= compra.compras_id%>"><img src="/img/delete.png" width="30"
+                                id="delete"></a>
+                          </td>
+                        </tr>
+                        <%}%>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+      <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
+      <script src="bootstrap/js/popper.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+      <script src="assets/js/app.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          App.init();
+        });
+      </script>
+      <script src="plugins/highlight/highlight.pack.js"></script>
+      <script src="assets/js/custom.js"></script>
+      <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+      <!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
+      <script src="assets/js/scrollspyNav.js"></script>
+      <script>
+        checkall('todoAll', 'todochkbox');
+        $('[data-toggle="tooltip"]').tooltip()
+      </script>
+      <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
+
+  </body>
+
+
+</html>

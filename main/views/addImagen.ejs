@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nutriboost-Imagen</title>
+
+	<style type="text/css">
+    @font-face{
+		font-family:'dali';
+		src:url('/fuentes/Zombie Predator TTF Personal.ttf');
+	   }
+	body{
+			background-image:url('/img/FondoUpdate.jpg');
+			background-attachment: fixed;
+			background-size: cover;
+			background-position:top;
+			color:white;
+		}
+
+    form{
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: center;
+    	margin:80px auto;
+    	width:40%;
+    	border:1px solid black;
+    	border-radius: 20px;
+    }
+    input{
+    	padding:10px;
+    	margin:10px;
+    }
+    label{
+    	font:30px 'dar' ;
+    	font-weight: bold;
+    	color:white;
+    }
+   h1{
+   	font:40px 'dali' ;
+   	text-align: center;
+   	line-height: 50px;
+   	color:rgb(25, 162, 18);
+	font-family: sans-serif;
+   }
+   #destacado{
+   	width:20%;
+   	border-radius:10px 10px 10px 10px;
+   }
+  #divDestacado{
+  	border:1px solid black;
+  	width:70%;
+  	margin:50px auto;
+  	background:rgba(108, 114, 114,.7);
+  	border-radius:50%;
+  }
+  #botones{
+	display:flex;
+	justify-content: flex-end;
+	align-items: center;
+	 border:1px solid white;
+	 background:rgba(180, 180, 180, .7);
+	 border-top:none;
+	 border-left:none;
+	 border-right:none;
+}
+  #botones a{
+	border-radius:15px 10px 20px 10px;
+	font:30px 'dar';
+	padding:20px;
+	text-decoration: none;
+	color:white;
+	transition: all 1s;
+}
+#botones a:hover{
+transform: translateY(-10px);
+}
+
+	</style>
+
+
+</head>
+<body>
+
+<div id='botones'>
+	<a href='/productos' style="color: rgb(25, 162, 18);">Volver</a>
+</div>
+
+<h1>Agregar Imagen</h1>
+
+<div id='divDestacado'>
+	
+<form action="/addImagen/<%=modelo.producto_id%>" method="post" enctype="multipart/form-data">
+	
+	<label for='imagen' style="color: rgb(237, 184, 99);">Imagen</label>
+	
+	<input type="file" name="img" id="img" placeholder="Imagen">
+  
+	<label for="destacado" style="color: rgb(237, 184, 99);">Destacado</label>
+	<select id='destacado' name="destacado">
+		<option value='1'>Principal</option>
+		<option value='0'>No principal</option>
+	</select>
+
+	<input type="submit" value="add" id="destacado">
+</form>
+</div>
+
+</body>
+</html>

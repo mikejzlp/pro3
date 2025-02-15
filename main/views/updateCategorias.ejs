@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<%- include('header') -%>
+
+	<body>
+		<%- include('nav') -%>
+			<div class="container mt-3">
+				<div class="row">
+					<div class="col card">
+						<h1 id="crear" style="font-family: cursive;" style="color: rgb(25, 162, 18);">Actualizar
+							Categoria</h1>
+
+						<form action="/updateCategoria/<%=modelo.id%>" class="card-body" method="post">
+
+							<div class='container'>
+								<div class="row">
+									<div class="col-12">
+										<label style="color: rgb(237, 184, 99);">Nombre</label>
+										<input class="form-control" type="text" name="nombre"
+											value="<%=modelo.nombre%>">
+									</div>
+									<div class="col-12 mt-3">
+										<input class="btn btn-primary" type="submit" value="Actualizar" id="update">
+										<a class="btn btn-outline-danger" href="/categorias" id="botonProductos"
+											style="color: rgb(237, 184, 99);">Volver</a>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+
+	</body>
+
+</html>
+
+<h2></h2>

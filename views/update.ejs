@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<%- include('header') -%>
+
+    <body>
+        <%- include('nav') -%>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 card mt-3">
+                        <div class="card-body">
+                            <h1 id="crear">Actualizar Producto</h1>
+
+                            <form action="/update/<%=modelo.producto_id%>" method="post">
+                                <div class='container-fluid'>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="nombre" style="color: rgb(237, 184, 99);">nombre</label>
+                                            <input class="form-control" type="text" autofocus name="nombre"
+                                                value="<%=modelo.nombre%>" />
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="codigo" style="color: rgb(237, 184, 99);">codigo</label>
+                                            <input class="form-control" name="codigo" type="number"
+                                                value="<%= modelo.codigo%>" />
+                                        </div>
+
+                                        <div class="col-6">
+
+                                            <label for="precio" style="color: rgb(237, 184, 99);">precio</label>
+                                            <input class="form-control" type="number" name="precio"
+                                                value="<%= modelo.precio %>">
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="descripcion"
+                                                style="color: rgb(237, 184, 99);">descripcion</label>
+                                            <input class="form-control" type="text" name="descripcion"
+                                                value="<%= modelo.descripcion %>">
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="calidad" style="color: rgb(237, 184, 99);">calidad</label>
+                                            <input class="form-control" type="text" name="calidad"
+                                                value="<%= modelo.calidad %>">
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="cantidad" style="color: rgb(237, 184, 99);">Cantidad</label>
+                                            <input class="form-control" type="number" name="cantidad"
+                                                value="<%= modelo.cantidad %>">
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for='categoria' style="color: rgb(237, 184, 99);">Categoria</label>
+                                            <select id='categoria' class="form-control" name='categoria' required>
+                                                <option value="1">Vitamina y Minerales</option>
+                                                <option value="2">Fibra Dietetica</option>
+                                                <option value="3">Hierbas y Plantas</option>
+                                                <option value="4">Proteinas y Aminoacidos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="cancelar" class="mt-3 row">
+                                        <div class="col" style="display: flex;justify-items: flex-end; align-items: center; gap:8px">
+                                            <input class=" btn btn-primary" type="submit" value="Actualizar" id="update">
+                                            <a class="btn btn-outline-primary" href="/productos" id="botonProductos">Productos</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+    <%- include('footer') -%>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') -%>
+  <link href="/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/forms/theme-checkbox-radio.css">
+  <link href="/assets/css/tables/table-basic.css" rel="stylesheet" type="text/css" />
+
+
+  <body class="container">
+
+	<div class="row py-5">
+		<div class="card col-12 m-auto">
+			<div class="card-body">
+				<h1>Imagenes del Producto</h1>
+
+				<div id='container-fluid'>
+					<div class="row" style="gap:5px">
+						<% for(let m=0;m < imagenes.length;m++){ %>
+							<img src="<%= imagenes[m].url%>" class="col img-fluid" style="height: 350px;">
+						<% } %>
+					</div>
+
+				</div>
+				<a href="/clientes" class="btn btn-primary">Volver</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') -%>
+	<link href="/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/forms/theme-checkbox-radio.css">
+	<link href="/assets/css/tables/table-basic.css" rel="stylesheet" type="text/css" />
+
+	<link rel="icon" type="image/x-icon" href="img/limpieza.png" />
+	<!-- Font Awesome icons (free version)-->
+	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link rel="stylesheet" type="text/css" href="/css/clientes.css">
+	<script type="text/javascript" src="/js/alert.js"></script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-G-37QEMCEWYD"></script>
+	<!--Google Analytics-->
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-37QEMCEWYD');
+	</script>
+
+	<body class="bg-light">
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+
+			<h1 class="navbar-brand">NutrinBoost</h1>
+
+			<form class="form-inline">
+				<input  class="form-control mr-sm-2" type="search" placeholder="Buscar Producto..."
+					aria-label="Buscar Producto...">
+				<button class="btn btn-outline-success my-sm-0" type="button"
+					onclick="buscarProductos()">Search</button>
+			</form>
+		</nav>
+
+
+
+		<div class="container pt-3">
+			<div class="row">
+				<section id='sectionFormulario' class="card px-0 col-12 col-lg-9 m-auto">
+
+					<div class="card-header">
+						<h1 class="text-dark">¿Esta seguro que desea realizar la compra?</h1>
+
+					</div>
+					<div class="card-body container-fluid">
+						<form class="row" action="/comprarPost" method='post'>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Nombre de usuario</label>
+								<input class="form-control" type="text" name="nombre_de_usuario" value='<%= resultado.nombre_usuario%>'
+									readonly>
+							</div class='col-6 form-group' style="display: flex; flex-direction: column;">
+
+
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Apellido</label>
+								<input class="form-control" type="text" name="apellido" value="<%= resultado.apellido%>" readonly>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Cedula</label>
+								<input class="form-control" type="number" name="cedula" value='<%=ip.cedula%>' readonly>
+							</div>
+
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Producto</label>
+								<input class="form-control" type="text" name="telefono" value='<%= resultado.nombre%>' readonly>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Cliente_id</label>
+								<input class="form-control" type="number" name="cliente_id" value='<%= resultado.id%>' readonly>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">producto_id</label>
+								<input class="form-control" type="number" name="producto_id" value='<%= resultado.producto_id%>' readonly>
+							</div>
+
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">cantidad</label>
+								<input class="form-control" type="number" name="cantidad" value='1' id='cantidad'>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Total_pagado</label>
+								<input class="form-control" type="number" name="total_pagado" value='<%= resultado.precio%>'
+									id='Total_pagado' readonly>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Codigo de operacion</label>
+								<input class="form-control" type="number" name="codigo" value="<%=resultado.codigo%>" readonly>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Numero de Tarjeta</label>
+								<select class="form-control" name='numeroT' required>
+									<option value=""></option>
+									<option value='546789876543'>546789876543</option>
+									<option value='456789876578'>456789876578</option>
+									<option value='1526768909897'>1526768909897</option>
+
+								</select>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Mes de vencimiento</label>
+								<input class="form-control" type="number" name="mesV" min="1" max="12" step="1" placeholder="mes" required>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Año de vencimiento</label>
+								<input class="form-control" type="number" min="1900" max="2099" step="1" placeholder="Año" name="year"
+									required>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Metodo de pago</label>
+								<select class="form-control" name='currency'>
+									<option></option>
+									<option value="USD">USD</option>
+									<option value="EUR">EUR</option>
+									<option value="VES">VES</option>
+								</select>
+							</div>
+
+							<div class='col-6 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Descripción</label>
+								<input class="form-control" type="text" name="descripcion" value='<%=resultado.descripcion%>' readonly>
+							</div>
+
+							<div class='col-12 form-group' style="display: flex; flex-direction: column;">
+								<label style="color: rgb(237, 184, 99);" class="text-lead">Clave</label>
+								<input class="form-control" type="number" name="cvv" placeholder="clave" min="1" max="999" step="1"
+									id='clave' required>
+							</div>
+
+
+							<div class='col-12 container row'>
+
+								<input class="col-3 btn btn-primary m-auto" type="submit" value="Confirmar">
+								<a href="/clientes" class="col-3 btn btn-danger m-auto">Cancelar</a>
+
+							</div>
+
+
+						</form>
+					</div>
+
+				</section>
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+
+			function redireccionar() {
+				window.location.href = '/clientes';
+			}
+
+			let clave = document.getElementById('clave');
+			clave.addEventListener('input', () => {
+				if (clave.value > 999) {
+					clave.value = 999;
+				}
+			})
+
+
+			let cantidad = document.getElementById('cantidad');
+
+			let total_pagado = document.getElementById('Total_pagado');
+
+			const valorInicial = total_pagado.value;
+
+			cantidad.addEventListener('input', function () {
+				if (cantidad.value < 1) {
+					cantidad.value = 1;
+				}
+				total_pagado.value = cantidad.value * valorInicial;
+			});
+		</script>
+	</body>
+
+</html>

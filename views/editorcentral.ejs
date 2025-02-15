@@ -1,0 +1,48 @@
+<div id="row">
+    <!------------------------------------------>
+    <div class="col-6">
+        <label for="nombre" style="color: rgb(237, 184, 99);">nombre</label>
+        <input class="form-control" type="text" autofocus name="nombre" value="<%=modelo.nombre%>" />
+    </div>
+
+    <!------------------------------------------>
+    <div class="col-6">
+        <label for="codigo" style="color: rgb(237, 184, 99);">codigo</label>
+        <input class="form-control" name="codigo" type="number" value="<%= modelo.codigo%>" />
+    </div>
+
+    <!--------------------------------------------->
+    <div class="col-6">
+
+        <label for="precio" style="color: rgb(237, 184, 99);">precio</label>
+        <input class="form-control" type="number" name="precio" value="<%= modelo.precio %>">
+    </div>
+
+    <!----------------------------------------------------->
+    <div class="col-6">
+        <label for="descripcion" style="color: rgb(237, 184, 99);">descripcion</label>
+        <input class="form-control" type="text" name="descripcion" value="<%= modelo.descripcion %>">
+    </div>
+
+    <!----------------------------------------------------->
+    <div class="col-6">
+        <label for="calidad" style="color: rgb(237, 184, 99);">calidad</label>
+        <input class="form-control" type="text" name="calidad" value="<%= modelo.calidad %>">
+    </div>
+    <!----------------------------------------------------->
+    <div class="col-6">
+        <label for="cantidad" style="color: rgb(237, 184, 99);">Cantidad</label>
+        <input class="form-control" type="number" name="cantidad" value="<%= modelo.cantidad %>">
+    </div>
+    <!----------------------------------------------------->
+    <div class="col-6">
+        <label for='categoria' style="color: rgb(237, 184, 99);">Categoria</label>
+        <select id='categoria' name='categoria' required>
+            <option value="1">Vitamina y Minerales</option>
+            <option value="2">Fibra Dietetica</option>
+            <option value="3">Hierbas y Plantas</option>
+            <option value="4">Proteinas y Aminoacidos</option>
+        </select>
+    </div>
+    <!----------------------------------------------------->
+</div>

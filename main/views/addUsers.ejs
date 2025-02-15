@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') -%>
+	<link href="/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/forms/theme-checkbox-radio.css">
+	<link href="/assets/css/tables/table-basic.css" rel="stylesheet" type="text/css" />
+
+
+	<body>
+
+		<%- include('nav') -%>
+
+			<div class="container pt-3">
+				<div class="card">
+					<div class="card-body">
+						<h1>Crear usuario</h1>
+						<form class="row" action="/addUser" method="post">
+							<div class="col-6 form-group">
+								<input required type="text" class="form-control" name="nombre" id="" placeholder="Nombre">
+							</div>
+							<div class="col-6 form-group">
+								<input required type="text" class="form-control" name="apellido" id="" placeholder="Apellido">
+							</div>
+							<div class="col-6 form-group">
+								<input required type="text" class="form-control" name="cedula" id="" placeholder="Cedula">
+							</div>
+
+							<div class="col-6 form-group">
+								<input required type="email" class="form-control" name="correo" id="sEmail" placeholder="Correo">
+							</div>
+							<div class="col-6 form-group mb-4">
+								<input required type="password" class="form-control" name="password" id="sPassword"
+									placeholder="Contraseña">
+							</div>
+							<div class="col-12"></div>
+							<button type="submit" class="m-auto btn btn-primary mt-3">Crear Usuario</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+	</body>
+
+</html>

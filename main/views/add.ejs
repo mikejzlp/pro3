@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <%- include('header') -%>
+        <%- include('nav') -%>
+
+            <div class="container mt-3">
+                <form action="/addPost" class="row" method="post">
+                    <div class="col-12 card">
+                        <div class="card-body">
+                            <h1 id="crear">Agregar Producto</h1>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="nombre">Nombre</label>
+                                        <input class="form-control"  type="text" autofocus name="nombre" placeholder="Nombre" />
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="codigo">Codigo</label>
+
+                                        <input class="form-control"  name="codigo" type="number" placeholder=" Codigo" />
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="precio">Precio</label>
+                                        <input class="form-control"  type="number" name="precio" placeholder=" Precio">
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="descripcion">Descripcion</label>
+                                        <input class="form-control"  type="text" name="descripcion" placeholder=" Descripcion">
+
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="calidad">Calidad</label>
+                                        <input class="form-control"  type="text" name="calidad" placeholder=" Calidad">
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="cantidad">Cantidad</label>
+                                        <input class="form-control"  type="number" name="cantidad" placeholder=" Cantidad">
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for='categoria'>Categoria</label>
+                                        <select class="form-control" id='categoria' name='categoria' required>
+                                            <option value="3">Categoria 1</option>
+                                            <option value="4">Categoria 2</option>
+                                            <option value="4">Categoria 3</option>
+                                            <option value="4">Categoria 4</option>
+                                            <option value="4">Categoria 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="cancelar" class="col-12 mt-3">
+                                    <input class="btn btn-primary" type="submit" value="Agregar" id="update">
+                                    <a class="btn btn-outline-danger" href="/productos" id="botonProductos">Volver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!------------------------------------------->
+
+
+            <!-- </div> -->
+            </form>
+            </div>
+</body>
+<%- include('footer') -%>
+
+</html>
